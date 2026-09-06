@@ -1,0 +1,152 @@
+.experience {
+  padding: 80px 20px;
+}
+
+.experience-timeline {
+  position: relative;
+  margin-top: 3rem;
+}
+
+.experience-timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(
+    to bottom,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+}
+
+@media (max-width: 768px) {
+  .experience-timeline::before {
+    left: 5px;
+  }
+}
+
+.timeline-item {
+  position: relative;
+  padding-left: 3rem;
+  margin-bottom: 3rem;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: -9px;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  border: 3px solid var(--bg-light);
+  transition: all 0.3s ease;
+}
+
+body.dark-theme .timeline-marker {
+  border-color: var(--bg-dark);
+}
+
+.timeline-item:hover .timeline-marker {
+  width: 30px;
+  height: 30px;
+  left: -14px;
+  background-color: var(--secondary-color);
+}
+
+.timeline-content {
+  background-color: var(--bg-light-secondary);
+  padding: 2rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+body.dark-theme .timeline-content {
+  background-color: var(--bg-dark-secondary);
+}
+
+.timeline-item:hover .timeline-content {
+  transform: translateX(10px);
+  box-shadow: 0 10px 25px rgba(0, 102, 204, 0.15);
+}
+
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.timeline-content h3 {
+  font-size: 1.3rem;
+  color: var(--text-light);
+  margin: 0;
+}
+
+body.dark-theme .timeline-content h3 {
+  color: var(--text-dark);
+}
+
+.company-name {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.duration {
+  color: #888;
+  font-size: 0.9rem;
+  margin: 0.5rem 0 1rem 0;
+}
+
+body.dark-theme .duration {
+  color: #999;
+}
+
+.description {
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+body.dark-theme .description {
+  color: #aaa;
+}
+
+.responsibilities {
+  list-style: none;
+  padding: 0;
+}
+
+.responsibilities li {
+  padding: 0.5rem 0;
+  color: #777;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+body.dark-theme .responsibilities li {
+  color: #999;
+}
+
+.responsibilities li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .experience {
+    padding: 60px 15px;
+  }
+
+  .experience-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
